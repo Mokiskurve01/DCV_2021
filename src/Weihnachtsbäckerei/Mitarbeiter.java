@@ -1,6 +1,7 @@
 package Weihnachtsbäckerei;
 
-import java.util.Scanner;
+import java.util.Random;
+import java.util.Vector;
 
 public class Mitarbeiter {
     private String name;
@@ -14,16 +15,19 @@ public class Mitarbeiter {
         return name;
     }
 
-    public static void extracted() {
-        Scanner scanner = new Scanner(System.in);
-        Kunde kunde=new Kunde();
-        System.out.print("Name eingeben->");
-        String name = scanner.next();
-        kunde.setName(name);
-        System.out.print("Adresse eingeben->");
-        String adresse = scanner.next();
-        kunde.setAdresse(adresse);
-        System.out.println("Kundenname lautet: " + name);
-        System.out.println("Lieferadresse ist: " + adresse);
+    public static void mitarbeiterKeksAusgabe(Vector mitarbieter, Vector keks) {
+        Random random = new Random();//objekt vom typ random erzeugen
+
+        int j = 0;//für die ausgabe auf der konsole verwende ich eine verschachtelte for schleife
+        int k = 3;//
+        for (int i = 0; i < mitarbieter.size(); i++) {
+            int zufallZahl = random.nextInt(keks.size());//zufall zahl für den lieblingskeks
+            System.out.println("  Mitarbeiter " + (i + 1) + ": " + mitarbieter.elementAt(i) + "-Lieblingskeks: " + keks.elementAt(zufallZahl));
+            System.out.println("    " + mitarbieter.elementAt(i) + " ist zuständig für: ");
+            for (j = j; j < k; j++) {
+                System.out.println("     - " + keks.elementAt(j));
+            }
+            k += 3;
+        }
     }
 }

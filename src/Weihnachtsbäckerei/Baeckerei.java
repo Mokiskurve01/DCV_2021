@@ -9,6 +9,6 @@ public class Baeckerei {
 
     @Override
     public String toString() {
-        return "Name der Bäckerei: " + name;
+        return "Bäckerei Name: " + name;
     }
 }
