@@ -1,4 +1,4 @@
-package Weihnachtsbäckerei;
+package Weihnachtsbäckerei2.Weihnachtsbäckerei;
 
 import java.util.Scanner;
 import java.util.Vector;
@@ -39,8 +39,8 @@ public class Main {
         keks.add(streusel);
         keks.insertElementAt(rum, 4);
 
-       // Mitarbeiter.mitarbeiterKeksAusgabe(mitarbieter, keks);
-       // Kunde.eingabe();
+        //Mitarbeiter.mitarbeiterKeksAusgabe(mitarbieter, keks);
+        //Kunde.eingabe();
         System.out.println("Start der Bestellung");
         boolean nochmal = true;
         while (nochmal) {
@@ -54,10 +54,10 @@ public class Main {
                     int i = 0;
                     auswahlKeks(mitarbieter, keks, i);
                 } else if (auswahlMitarbeiter == 2) {
-                    int i = 3;
+                    int i = 1;
                     auswahlKeks(mitarbieter, keks, i);
                 } else if (auswahlMitarbeiter == 3) {
-                    int i = 6;
+                    int i = 2;
                     auswahlKeks(mitarbieter, keks, i);
                 } else {
                     System.out.println("Falsche Eingabe");
@@ -74,18 +74,16 @@ public class Main {
         System.out.print("[1." + keks.elementAt(i) + " 2." + keks.elementAt(++i) + " 3." + keks.elementAt(++i) + "]->");
         int auswahlKeks = scanner.nextInt();
         if (auswahlKeks == 1) {
-            System.out.println(keks.elementAt(i + 0));
+             i=0;
+            System.out.println(keks.elementAt(i));
         } else if (auswahlKeks == 2) {
-            System.out.println(keks.elementAt(i + 1));
+            i=1;
+            System.out.println(keks.elementAt(i));
         } else if (auswahlKeks == 3) {
-            System.out.println(keks.elementAt(i + 2));
+            i=2;
+            System.out.println(keks.elementAt(i));
         } else {
             System.out.println("Falsche Eingabe");
         }
     }
-
 }
-
-
-
-
