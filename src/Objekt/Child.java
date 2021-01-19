@@ -10,6 +10,10 @@ public class Child {
         this.name = name;
     }
 
+    private String getName() {
+        return name;
+    }
+
     // Übergabe einer Referenz (Adresse) eines Child-Objekts
     public void setBestFriend(Child bestFriend) {
         this.bestFriend = bestFriend;
@@ -21,6 +25,8 @@ public class Child {
 
     @Override
     public String toString() {
-        return name + ", bestFriend=" + bestFriend;
+        return name + " - bestFriend=" + bestFriend.getName();
     }
+
+
 }

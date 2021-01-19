@@ -9,7 +9,7 @@ public class Objekt {
         Child claudia = new Child("Claudia");
         maria.setBestFriend(franz);//über .Setmethode in der Klasse wird dem Objekt best friend zugewiesen
         franz.setBestFriend(claudia);//
-        //claudia.setBestFriend(maria);
+        claudia.setBestFriend(maria);
 
         Schoolroom schoolroom = new Schoolroom();// new Objekt Vector wird erst in der Klasse erzeugt
         schoolroom.addChild(maria);//über addChild methode wird in der Klasse Schoolroom Objekt der Vectorliste angefügt
