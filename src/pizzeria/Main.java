@@ -20,13 +20,13 @@ public class Main {
         int counter = 0;
         while (again) {
             System.out.println();
-            System.out.print("[1=Pizza topping 2=Bill]->");
+            System.out.print("[1=Pizza topping 0=Bill]->");
             int select = scanner.nextInt();
             counter++;
             System.out.println("Noch "+(6-counter)+" Zutaten sind möglich!");
             if (select == 1) {
                 addTopping();
-            } else if (select == 2) {
+            } else if (select == 0) {
                 again = bill();
             } else {
                 System.out.println("[Misentry]");
@@ -41,6 +41,7 @@ public class Main {
 
     private static boolean bill() {
         boolean again;
+        System.out.println("<--------------Bestellbestätigung--------------->");
         System.out.println("Pizza " + pizza.getName() + ":Topping- " + pizzaTopping);
         System.out.println("It s " + pizza.getPreis() + " Euro.");
         again = false;
