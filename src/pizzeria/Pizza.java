@@ -18,7 +18,7 @@ public class Pizza {
         return preis;
     }
 
-    public void preisZutat(int zutat){
-        preis+=zutat;
+    public void preisTopping(int topping){
+        preis+=topping;
     }
 }
