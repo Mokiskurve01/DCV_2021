@@ -10,8 +10,8 @@ import java.util.Vector;
 public class Main {
     static Scanner scanner = new Scanner(System.in);
     static Pizza pizza = new Pizza("Margherita", 6);
-    static Topping topping = new Topping("Cheese", "Ham", "Pineapple", "Tomato", "Chili");//5 Zutaten definieren
-    static Vector pizzaTopping = new Vector();
+    static Topping topping = new Topping("Cheese", "Ham", "Pineapple", "Tomato", "Chili");//max 5 Zutaten definieren
+    static Vector pizzaTopping = new Vector();//für die rechnung einen vector der zutaten auf der pizza
 
     public static void main(String[] args) {
 
@@ -23,6 +23,7 @@ public class Main {
             System.out.print("[1=Pizza topping 2=Bill]->");
             int select = scanner.nextInt();
             counter++;
+            System.out.println("Noch "+(6-counter)+" Zutaten sind möglich!");
             if (select == 1) {
                 addTopping();
             } else if (select == 2) {
@@ -40,7 +41,7 @@ public class Main {
 
     private static boolean bill() {
         boolean again;
-        System.out.println("Pizza: " + pizza.getName() + "-Topping: " + pizzaTopping);
+        System.out.println("Pizza " + pizza.getName() + ":Topping- " + pizzaTopping);
         System.out.println("It s " + pizza.getPreis() + " Euro.");
         again = false;
         return again;
@@ -52,9 +53,9 @@ public class Main {
 
         switch (auswahl) {
             case 1 -> {
-                pizza.preisTopping(1);
+                pizza.preisTopping(1);//methode preisZutaten + preisPizza
                 System.out.println("Amount " + pizza.getPreis() + " Euro/ topping " + topping.getTopping1());
-                Main.pizzaTopping.add(topping.getTopping1());
+                Main.pizzaTopping.add(topping.getTopping1());//zutaten vector hinzufügen
             }
             case 2 -> {
                 pizza.preisTopping(1);
