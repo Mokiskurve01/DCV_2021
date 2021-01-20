@@ -10,8 +10,8 @@ import java.util.Vector;
 public class Main {
     static Scanner scanner = new Scanner(System.in);
     static Pizza pizza = new Pizza("Margherita", 6);
-    static Topping topping = new Topping("Cheese", "Ham", "Pineapple", "Tomato", "Chili");//max 5 Zutaten definieren
-    static Vector pizzaTopping = new Vector();//für die rechnung einen vector der zutaten auf der pizza
+    static Topping topping = new Topping("Cheese", "Ham", "Pineapple", "Tomato", "Chili");//max 5 Zutaten
+    static Vector<String> pizzaTopping = new Vector<String>();//Rechnung Vector Zutaten auf der Pizza
 
     public static void main(String[] args) {
 
