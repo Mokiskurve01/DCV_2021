@@ -3,15 +3,12 @@ package FirstInterface.Geschaeft;
 public class Main {
     public static void main(String[] args) {
 
-        Shop shop1=new Shop("Webshop",new PayPal());
-        Shop shop2=new Shop("Lokales Geschäft",new Bitcoin());
-        Shop shop3=new Shop("Jahr Markt",new Kreditkarte());
+        Webshop shop1 = new Webshop("Shop1", new PayPal());
+        Webshop shop2 = new Webshop("Shop2", new Bitcoin());
+        Webshop shop3 = new Webshop("Shop3", new Kreditkarte());
 
-        shop1.zahlen();
-        System.out.println();
-        shop2.zahlen();
-        System.out.println();
-        shop3.zahlen();
-
+        shop1.zahlung();
+        shop2.zahlung();
+        shop3.zahlung();
     }
 }

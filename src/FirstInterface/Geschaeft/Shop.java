@@ -1,22 +1,15 @@
 package FirstInterface.Geschaeft;
 
-public class Shop {
-    private final String name;
-    private final IZahlung zahlungsart;
+public abstract class Shop {
+    private String name;
+    private IZahlung zahlungsart;
 
-    public Shop(String name, IZahlung iz)//iz argument Interface
-    {
+    public Shop(String name, IZahlung iz) {
         this.name = name;
         this.zahlungsart = iz;
-
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void zahlen() {
-        System.out.println("Geschäft: " + getName());
+    public void zahlung() {
         zahlungsart.erzeugeZahlung();
     }
 }
