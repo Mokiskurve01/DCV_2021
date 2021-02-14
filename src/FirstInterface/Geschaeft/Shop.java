@@ -1,10 +1,10 @@
 package FirstInterface.Geschaeft;
 
 public abstract class Shop {
-    private String name;
-    private IZahlung zahlungsart;
-    private double betrag;
-    private double gebuehr;
+    private final String name;
+    private final IZahlung zahlungsart;
+    private final double betrag;
+    private final double gebuehr;
 
     public Shop(String name, IZahlung iz, double betrag, double gebuehr) {
         this.name = name;
