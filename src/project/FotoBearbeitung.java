@@ -16,13 +16,11 @@ public class FotoBearbeitung {
         BufferedImage image = null;
         try {
 
-            //
             image = ImageIO.read(new File(pathName + fileName + extention));
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
             System.out.println(ex.getStackTrace());
         }
-
 
         // use Image 'Filter'
         grayScale(image, pathName, fileName, extention);
