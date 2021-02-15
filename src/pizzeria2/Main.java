@@ -1,6 +1,5 @@
-package pizzeria;
+package pizzeria2;
 /***
- * wenn keine zahl beim scanner eingegeben wird kommt ein fehler (scanner.nextInt)
  * es könne fünf zutaten hinzugefügt werden ( problmen bei default zählt counter, methode addTopping bei default counter--)
  */
 
@@ -17,21 +16,22 @@ public class Main {
 
         System.out.printf("Start with Pizza %s%n", pizza.getName() + "\nAmount " + pizza.getPreis() + " Euro.");
         boolean again = true;
-        int counter = 0;
+        int counter = 5;
         while (again) {
             System.out.println();
             System.out.print("[1=Pizza topping 0=Bill]->");
-            int select = scanner.nextInt();
-            counter++;
-            System.out.println("Noch "+(6-counter)+" Zutaten sind möglich!");
-            if (select == 1) {
+            String select = scanner.next();
+            select = select.substring(0, 1);
+            counter--;
+            System.out.println("Noch " + (counter) + " Zutaten sind möglich!");
+            if (49 == ((int) select.charAt(0))) {
                 addTopping();
-            } else if (select == 0) {
+            } else if (48 == ((int) select.charAt(0))) {
                 again = bill();
             } else {
-                System.out.println("[Misentry]");
+                System.out.println("[Error]");
             }
-            if (counter == 5) {
+            if (counter == 0) {
                 again = bill();
             }
         }
@@ -50,35 +50,37 @@ public class Main {
 
     private static void addTopping() {
         System.out.print("[1=" + topping.getTopping1() + " 2=" + topping.getTopping2() + " 3=" + topping.getTopping3() + " 4=" + topping.getTopping4() + " 5=" + topping.getTopping5() + "]->");
-        int auswahl = scanner.nextInt();
+        String auswahl = scanner.next();
+
 
         switch (auswahl) {
-            case 1 -> {
+            case "1" -> {
                 pizza.preisTopping(1);//methode preisZutaten + preisPizza
                 System.out.println("Amount " + pizza.getPreis() + " Euro/ topping " + topping.getTopping1());
                 Main.pizzaTopping.add(topping.getTopping1());//zutaten vector hinzufügen
             }
-            case 2 -> {
+            case "2" -> {
                 pizza.preisTopping(1);
                 System.out.println("Amount " + pizza.getPreis() + " Euro/ topping " + topping.getTopping2());
                 Main.pizzaTopping.add(topping.getTopping2());
             }
-            case 3 -> {
+            case "3" -> {
                 pizza.preisTopping(1);
                 System.out.println("Amount " + pizza.getPreis() + " Euro/ topping " + topping.getTopping3());
                 Main.pizzaTopping.add(topping.getTopping3());
             }
-            case 4 -> {
+            case "4" -> {
                 pizza.preisTopping(1);
                 System.out.println("Amount " + pizza.getPreis() + " Euro/ topping " + topping.getTopping4());
                 Main.pizzaTopping.add(topping.getTopping4());
             }
-            case 5 -> {
+            case "5" -> {
                 pizza.preisTopping(1);
                 System.out.println("Amount " + pizza.getPreis() + " Euro/ topping " + topping.getTopping5());
                 Main.pizzaTopping.add(topping.getTopping5());
             }
-            default -> System.out.println("[Misentry]");
+            default -> System.out.println("[Error]");
+
         }
     }
 }

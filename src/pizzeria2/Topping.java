@@ -1,4 +1,4 @@
-package pizzeria;
+package pizzeria2;
 
 public class Topping {
     private String topping1;
