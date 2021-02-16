@@ -1,0 +1,5 @@
+Aufgabe einer Java Exception ist es nicht nur einen konkreten Fehler zu behandeln,
+sondern gleich auf eine ganze Klasse von Fehlern einheitlich zu reagieren.
+Selbstverständlich gibt es neben der Behandlung von arithmetischen Ausnahmen noch viele weitere Klassen von Exceptions.
+So kannst du beispielsweise mit Hilfe der IOException Ausnahmen behandeln,
+die beim Lesen oder Schreiben von Daten auftreten können.

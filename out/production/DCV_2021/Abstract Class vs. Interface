@@ -1,0 +1,16 @@
+
+------------------------------------Abstract Class-----------------------------------------
+Abstrakte Klasse_Ist eine Klasse, die normalerweise mindestens eine abstrakte Methode enthält.
+-Kann nicht instanziiert(erzeugen eines Objektes) werden.
+-Es ist auch möglich, dass die Klasse überhaupt keine Methoden hat.
+-Dies geschieht, um zu verhindern, dass die Klasse selbst instanziiert wird.
+
+--------------------------------------Interface------------------------------------------
+Trennung von:
+-Was wir tun wollen.
+-Wie wir es tun.
+
+Enthält nur abstrakte Methoden.
+-Kann nicht instanziiert werden
+
+
