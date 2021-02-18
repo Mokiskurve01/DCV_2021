@@ -10,19 +10,19 @@ public class FotoBearbeitung {
     public static void main(String[] args) {
 
         var pathName = "C:\\Users\\DCV\\Desktop\\";
-        var fileName = "halfter4";
+        var fileName = "halfter5";
         var extention = ".png";
 
         BufferedImage image = null;
 
         //
-      /*  try {
+        try {
             image = ImageIO.read(new File(pathName + fileName + extention));
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
             System.out.println(ex.getStackTrace());
         }
-      */
+
 
         // use Image 'Filter'
         grayScale(image, pathName, fileName, extention);
@@ -59,7 +59,7 @@ public class FotoBearbeitung {
         saveImage(image, pathName, fileName, extention, "_GrayScaled");
     }
 
-    static void whiteToAlpha(BufferedImage inputImage, String pathName, String fileName, String extention) {
+   /* static void whiteToAlpha(BufferedImage inputImage, String pathName, String fileName, String extention) {
         var image = new BufferedImage(inputImage.getWidth(), inputImage.getHeight(), BufferedImage.TYPE_INT_ARGB);
 
 
@@ -91,6 +91,8 @@ public class FotoBearbeitung {
         }
         saveImage(image, pathName, fileName, ".png", "_WhiteToAlpha");
     }
+
+    */
 
     static void saveImage(BufferedImage image, String pathName, String fileName, String extention, String fileNameAddon) {
         //Save Image To File

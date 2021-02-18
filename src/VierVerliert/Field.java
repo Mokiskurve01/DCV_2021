@@ -18,8 +18,18 @@ public class Field {
         }
     }
 
-    public void move(Position position) {
-        switch (position.getPosition()) {
+    public void move(Position position) {//reihe 1
+        for (int i = 5; i >= 0; i--) {
+            if (position.getPosition() == 1 && board[i][0].equals(CellType.EMPTY.getSym())) {
+                board[i][0] = CellType.PLAYER1.getSym();
+                break;
+            }
+        }
+    }
+
+
+
+       /* switch (position.getPosition()) {
             case 1 -> board[5][0] = CellType.PLAYER1.getSym();
             case 2 -> board[5][1] = CellType.PLAYER1.getSym();
             case 3 -> board[5][2] = CellType.PLAYER1.getSym();
@@ -28,7 +38,8 @@ public class Field {
             case 6 -> board[5][5] = CellType.PLAYER1.getSym();
             case 7 -> board[5][6] = CellType.PLAYER1.getSym();
         }
-    }
+
+        */
 
 
     public void printField() {
@@ -38,7 +49,6 @@ public class Field {
             }
             System.out.println();
         }
-
     }
 
     public boolean isEmpty() {

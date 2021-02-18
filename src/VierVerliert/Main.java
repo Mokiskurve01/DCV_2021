@@ -2,7 +2,6 @@ package VierVerliert;
 
 public class Main {
 
-
     public static void main(String[] args) {
         Field field = new Field();
         Position position = new Position();
@@ -18,6 +17,5 @@ public class Main {
             field.printField();
             i++;
         }
-
     }
 }
