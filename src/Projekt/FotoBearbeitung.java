@@ -1,40 +1,43 @@
 package Projekt;
 
+import javax.imageio.IIOException;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 
 
 public class FotoBearbeitung {
 
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException {
+        //import Datei
         var pathName = "C:\\Users\\DCV\\Desktop\\";
-        var fileName = "halfter5";
+        var fileName = "halfter";
         var extention = ".png";
 
         BufferedImage image = null;
 
-        //
+        //datei vorhanden und in Ordnunng
         try {
             image = ImageIO.read(new File(pathName + fileName + extention));
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-            System.out.println(ex.getStackTrace());
+        } catch (IIOException iioe) {
+            System.out.println(iioe.getMessage());
+        }catch (NullPointerException npe){
+            System.out.println(npe.getMessage());
         }
-
 
         // use Image 'Filter'
         grayScale(image, pathName, fileName, extention);
+        whiteToAlpha(image, pathName, fileName, extention);
 
     }
 
     static void grayScale(BufferedImage image, String pathName, String fileName, String extention) {
-
         for (int y = 0; y < image.getHeight(); y++) {
             for (int x = 0; x < image.getWidth(); x++) {
 
-                //getARGB returns an int, we need to split 32bit in 4x8bit variables for our A R G B channels
+
+                //getARGB gibt ein int zurück, wir müssen 32bit in 4x8bit Variablen für unsere A R G B Kanäle aufteilen
                 //   (Alpha)     (Red)       (Green)     (Blue)
                 //[(0000 0000) (0000 0000) (0000 0000) (0000 0000)] <- 32Bit Integer
 
@@ -44,8 +47,9 @@ public class FotoBearbeitung {
                 int red = (pixel >> 16) & 0xff;
                 int alpha = (pixel >> 24) & 0xff;
 
-                //to gray out an image we need to set every pixel to the average of R G & B (R+G+B)/3
-                // when R G & B are equals the color is Gray(255 255 255 equals black and 0 0 0 equals white)
+
+               //Um ein Bild auszublenden, müssen wir jedes Pixel auf den Durchschnitt von R G & B (R + G + B) / 3 einstellen
+                //Wenn R G & B gleich ist, ist die Farbe Grau (255 255 255 ist gleich Schwarz und 0 0 0 ist gleich Weiß)
                 int average = (red + blue + green) / 3;
                 int newPixel = 0;
                 newPixel = newPixel | average;
@@ -59,7 +63,9 @@ public class FotoBearbeitung {
         saveImage(image, pathName, fileName, extention, "_GrayScaled");
     }
 
-   /* static void whiteToAlpha(BufferedImage inputImage, String pathName, String fileName, String extention) {
+
+
+    static void whiteToAlpha(BufferedImage inputImage, String pathName, String fileName, String extention) {
         var image = new BufferedImage(inputImage.getWidth(), inputImage.getHeight(), BufferedImage.TYPE_INT_ARGB);
 
 
@@ -92,7 +98,7 @@ public class FotoBearbeitung {
         saveImage(image, pathName, fileName, ".png", "_WhiteToAlpha");
     }
 
-    */
+
 
     static void saveImage(BufferedImage image, String pathName, String fileName, String extention, String fileNameAddon) {
         //Save Image To File

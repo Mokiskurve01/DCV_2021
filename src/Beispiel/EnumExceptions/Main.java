@@ -1,15 +1,20 @@
 package Beispiel.EnumExceptions;
 
+
+import Logger.LogType;
+import Logger.SimpleLogger;
+
 public class Main {
-    public static void main(String[] args) {
-        for (var category : Category.values()) {
-            try {
-                System.out.println(category.name() + " kostet " + category.getPreis());
-            } catch (ItemUnknownPriceException e) {
-                System.err.println("Fehler bei Pricing: " + e.getMessage());
-            } finally {
-                System.out.println("dieser Block wird immer ausgeführt");
+        public static void main(String[] args) {
+            SimpleLogger logger = SimpleLogger.getInstance();
+            for (var item : Items.values()) {
+                try {
+                    logger.log(LogType.INFO, item.name() + " kostet " + item.getPrice());
+                } catch (ItemUnknownPriceException e) {
+                    logger.log(LogType.ERROR, "Fehler bei Pricing: " + e.getMessage());
+                } finally {
+                    logger.log(LogType.WARNING, "dieser Block wird immer ausgeführt");
+                }
             }
         }
-    }
 }

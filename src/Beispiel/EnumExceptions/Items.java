@@ -1,10 +1,10 @@
 package Beispiel.EnumExceptions;
 
-public enum Category {
+public enum Items {
 
     HELM, STOECKE,SCHISCHUHE,SCHIBRILLE,SCHI,JAGERTEE;
 
-    public double getPreis() throws ItemUnknownPriceException {
+    public double getPrice() throws ItemUnknownPriceException {
         switch (this){
             case HELM -> { return 5.90;}
             case STOECKE -> { return 5.90;}

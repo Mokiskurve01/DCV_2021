@@ -1,4 +1,4 @@
-Java enums sind Variablentypen mit festgelegten Wertemöglichkeiten.
+Java Enums sind Variablentypen mit festgelegten Wertemöglichkeiten.
 Sie dienen der Lesbarkeit und der logischen Struktur Ihres Codes.
-Mit enums (kurz für enumeration, zu deutsch: Aufzählung)
+Mit Enums (kurz für enumeration, zu deutsch: Aufzählung)
 bietet Java Ihnen als Programmierer die Möglichkeit, vordefinierte Konstanten für Ihre Variablen festzulegen.

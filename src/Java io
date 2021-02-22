@@ -1,0 +1,14 @@
+
+FileReader(-FileReader Zeichen für Zeichen einlesen)
+
+BufferedReader(-BufferedReader Zeile für Zeile des FileReaders(
+
+Exception wird benötigt ob das File gefunden wird
+
+
+Pfade
+Absolut(-werden empfohlen, wenn Daten nicht verschoben werden. Dies ist auf privaten Computern in der Regel der Fall).
+Relative(-werden empfohlen, wenn Dokumente und Daten für andere Benutzer bereitgestellt werden).
+
+./ aktueller Ordner
+../ einen Ordner nach oben
