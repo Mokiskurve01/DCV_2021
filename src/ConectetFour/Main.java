@@ -9,11 +9,6 @@ public class Main  {
         var gui =new ConectFour(7,6,100);
 
 
-
-
-
-
-
       /*  var w = new JFrame();
         w.setSize(300,600);
         w.setVisible(true);
@@ -29,7 +24,6 @@ public class Main  {
         panel.add(new Circl(66));
 
         w.add(panel);
-
        */
     }
 }

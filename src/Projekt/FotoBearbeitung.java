@@ -12,7 +12,7 @@ public class FotoBearbeitung {
     public static void main(String[] args) throws IOException {
         //import Datei
         var pathName = "C:\\Users\\DCV\\Desktop\\";
-        var fileName = "halfter";
+        var fileName = "halfter1";
         var extention = ".png";
 
         BufferedImage image = null;
@@ -20,13 +20,12 @@ public class FotoBearbeitung {
         //datei vorhanden und in Ordnunng
         try {
             image = ImageIO.read(new File(pathName + fileName + extention));
-        } catch (IIOException iioe) {
+        } catch (IIOException | NullPointerException iioe) {
             System.out.println(iioe.getMessage());
-        }catch (NullPointerException npe){
-            System.out.println(npe.getMessage());
         }
 
         // use Image 'Filter'
+        assert image != null;
         grayScale(image, pathName, fileName, extention);
         whiteToAlpha(image, pathName, fileName, extention);
 
@@ -63,8 +62,6 @@ public class FotoBearbeitung {
         saveImage(image, pathName, fileName, extention, "_GrayScaled");
     }
 
-
-
     static void whiteToAlpha(BufferedImage inputImage, String pathName, String fileName, String extention) {
         var image = new BufferedImage(inputImage.getWidth(), inputImage.getHeight(), BufferedImage.TYPE_INT_ARGB);
 
@@ -97,7 +94,6 @@ public class FotoBearbeitung {
         }
         saveImage(image, pathName, fileName, ".png", "_WhiteToAlpha");
     }
-
 
 
     static void saveImage(BufferedImage image, String pathName, String fileName, String extention, String fileNameAddon) {
