@@ -21,18 +21,26 @@ public class Board {
         for (int y = board[0].length - 1; y >= 0; y--) {
             if (board[xpos][y] == CellType.EMPTY) {
                 board[xpos][y] = this.playerTurn ? CellType.RED : CellType.GREEN;
-            //    if (playerWin)
-                    this.playerTurn ^= true;//Bitwiese XOR operator to switch boolean;
+                this.playerTurn ^= true;//Bitwiese XOR operator to switch boolean;
                 return true;
             }
         }
         return false;
     }
 
-   public boolean checkForWin(){
-        return  true;
-   }
+    public boolean checkForWin(int xpos, int y) {
+        int count = 0;
+        for (int i = 0; i < 4; i++) {
+            if (board[xpos + i][y] == CellType.RED) {
+                count++;
+            }
+            if (count == 4) {
+                return true;
+            }
+        }
+        return false;
 
+    }
 
 
     public CellType[][] getBoard() {

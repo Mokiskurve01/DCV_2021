@@ -37,10 +37,10 @@ public class ConectFour {
                     if (field[x][y] == cirleSender) {
                         if (board.throwDisc(x)) {
                             gui.update(board.getBoard());
-                            if (board.checkForWin())
-
-
-                                return;
+                            if (board.checkForWin(x,y)) {
+                                Gui.winner();
+                            }
+                            return;
                         }
                     }
                 }

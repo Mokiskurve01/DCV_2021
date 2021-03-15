@@ -2,6 +2,7 @@ package ConectetFour_1.ConectetFour;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
 
 public class Gui extends JFrame {
@@ -40,16 +41,26 @@ public class Gui extends JFrame {
             }
         }
         window.repaint();
-
     }
+
     public Circl[][] getField() {
         return field;
     }
-    public void winner(){
-        window =new JFrame();
-        window.setTitle("The Winner Is blablabal");
-        window.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        window.setVisible(true);
-        window.setSize(20,20);
+
+    public static void winner() {
+
+        JFrame frame = new JFrame();
+        JLabel label = new JLabel(" Winner Winner Winner Winner Winner Winner Winner Winner ");
+        JPanel panel = new JPanel();
+
+        panel.add(label);
+
+        frame.add(panel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setTitle("My GUI");
+        frame.setSize(500,80);
+        //frame.pack();                   //passt das Fensters dar länge der Textes an
+        frame.setVisible(true);
+
     }
 }
