@@ -15,17 +15,21 @@ public class Main {
 
         String[] werkzeugName = new String[splitLine.length];
         int[] werkzeugDurchmesser = new int[splitLine.length];
-       // double[] werkzeugVorschub = new double[splitLine.length];
+        double[] werkzeugVorschub = new double[splitLine.length];
+
 
         werkzeugName[0] = splitLine[0].trim();
         werkzeugDurchmesser[0] = Integer.parseInt(splitLine[1].trim());
-       // werkzeugVorschub[0] = Double.parseDouble(splitLine[2].trim());
+        werkzeugVorschub[0] = Double.parseDouble(splitLine[2].trim());
 
-        Fraeswerkzeug fraeswerkzeug=new Fraeswerkzeug(werkzeugName[0],werkzeugDurchmesser[0]);
-        Berechnungen berechnungen =new Berechnungen();
+        Fraeswerkzeug fraeswerkzeug = new Fraeswerkzeug(werkzeugName[0], werkzeugDurchmesser[0]);
+        Berechnungen berechnungen = new Berechnungen();
+        int drehzahl=berechnungen.drehzahl(Schnittgeschwindichkeit.SCHRUPPFRAESER,fraeswerkzeug);
+        int vorschub= (int) berechnungen.vorschub(Schnittgeschwindichkeit.SCHRUPPFRAESER,drehzahl);
 
-        System.out.println(fraeswerkzeug.getName()+" Drehzahl: "+berechnungen.drehzahl(Schnittgeschwindichkeit.SCHRUPPFRAESER,fraeswerkzeug )+" U/min");
 
+        System.out.println(fraeswerkzeug.getName()
+                + " : Drehzahl= " + drehzahl + " U/min- "+vorschub+" mm/min" );
 
     }
 }

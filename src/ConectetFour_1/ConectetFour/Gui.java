@@ -9,8 +9,6 @@ public class Gui extends JFrame {
     private JPanel mainPanel;
     private Circl[][] field;
 
-
-
     public Gui(int xpos, int ypos, int cellSize, MouseListener mouseListener) {
         window = new JFrame();
         window.setTitle("!ConectFour");
@@ -33,7 +31,6 @@ public class Gui extends JFrame {
                 mainPanel.add(field[x][y]);
             }
         }
-
     }
 
     public void update(CellType[][] board) {
@@ -43,8 +40,16 @@ public class Gui extends JFrame {
             }
         }
         window.repaint();
+
     }
     public Circl[][] getField() {
         return field;
+    }
+    public void winner(){
+        window =new JFrame();
+        window.setTitle("The Winner Is blablabal");
+        window.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        window.setVisible(true);
+        window.setSize(20,20);
     }
 }

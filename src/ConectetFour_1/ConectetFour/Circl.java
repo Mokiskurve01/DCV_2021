@@ -29,6 +29,7 @@ public class Circl extends JPanel {
     @Override
     public void paint(Graphics g) {
         g.setColor(this.color);
-        g.fillOval((cellSize - this.cellSize / 10 * 8) / 2, (cellSize - this.cellSize / 10 * 8) / 2, cellSize / 10 * 8, cellSize / 10 * 8);
+        g.fillOval((cellSize - this.cellSize / 10 * 8) / 2, (cellSize - this.cellSize / 10 * 8) / 2,
+                cellSize / 10 * 8, cellSize / 10 * 8);
     }
 }

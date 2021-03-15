@@ -4,7 +4,7 @@ public class Fraeswerkzeug {
 
     private String name;
     private int durchmesser;
-    //private double vorschub;
+
 
     public Fraeswerkzeug(String name, int durchmesser) {
         this.name = name;
@@ -23,8 +23,6 @@ public class Fraeswerkzeug {
     public int getDurchmesser() {
         return durchmesser;
     }
-
-
 
 
 }

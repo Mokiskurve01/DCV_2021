@@ -10,10 +10,11 @@ public class ConectFour {
 
     public ConectFour(int xlen, int ylen, int cellSize) {
 
-        this.gui = new Gui(xlen, ylen, cellSize,new ClickEventHandler());
+        this.gui = new Gui(xlen, ylen, cellSize, new ClickEventHandler());
         this.board = new Board(xlen, ylen);
 
     }
+
     private class ClickEventHandler implements MouseListener {
 
         @Override
@@ -28,17 +29,20 @@ public class ConectFour {
 
         @Override
         public void mouseReleased(MouseEvent e) {
-            Circl cirleSender = (Circl)e.getSource();
+            Circl cirleSender = (Circl) e.getSource();
 
             var field = gui.getField();
-            for (int y = 0; y <field[0].length ; y++){
+            for (int y = 0; y < field[0].length; y++) {
                 for (int x = 0; x < field.length; x++) {
-                    if(field[x][y] == cirleSender){
-                        if(board.throwDisc(x)){
+                    if (field[x][y] == cirleSender) {
+                        if (board.throwDisc(x)) {
                             gui.update(board.getBoard());
-                            return;
+                            if (board.checkForWin())
+
+
+                                return;
                         }
-                   }
+                    }
                 }
             }
         }
