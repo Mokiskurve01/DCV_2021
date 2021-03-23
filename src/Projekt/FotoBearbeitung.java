@@ -12,7 +12,7 @@ public class FotoBearbeitung {
     public static void main(String[] args) throws IOException {
         //import Datei
         var pathName = "C:\\Users\\DCV\\Desktop\\";
-        var fileName = "java";
+        var fileName = "halfter1";
         var extention = ".png";
 
         BufferedImage image = null;
